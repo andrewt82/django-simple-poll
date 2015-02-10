@@ -17,6 +17,7 @@ class Poll(models.Model):
     title = models.CharField(max_length=250, verbose_name=_('question'))
     date = models.DateField(verbose_name=_('date'), default=datetime.date.today)
     is_published = models.BooleanField(default=True, verbose_name=_('is published'))
+    answer = models.CharField(max_length=150, verbose_name=_('answer'), null=True, blank=True)
 
     objects = models.Manager()
     published = PublishedManager()
